@@ -36,8 +36,8 @@ const appointments = [
         id: 1,
         name: "Sylvia Palmer",
         avatar: "https://i.imgur.com/LpaY82x.png",
-      }
-    }
+      },
+    },
   },
   {
     id: 3,
@@ -48,8 +48,8 @@ const appointments = [
         id: 2,
         name: "Tori Malcolm",
         avatar: "https://i.imgur.com/Nmx0Qxo.png",
-      }
-    }
+      },
+    },
   },
   {
     id: 4,
@@ -64,24 +64,20 @@ const appointments = [
         id: 3,
         name: "Mildred Nazir",
         avatar: "https://i.imgur.com/T2WwVfS.png",
-      }
-    }
+      },
+    },
   },
   {
     id: 6,
     time: "5pm",
-  }
+  },
 ];
 
-
-
 export default function Application(props) {
-  const [day, setDay] = useState("Monday")
-  const appointmentSchedules = appointments.map((appointment)=> {
-    return (<Appointment key={appointment.id} {...appointment} />)
-            })
-  console.log("this is day", day)
-  console.log("this is days", days)
+  const [day, setDay] = useState("Monday");
+  const appointmentSchedules = appointments.map((appointment) => {
+    return <Appointment key={appointment.id} {...appointment} />;
+  });
   return (
     <main className="layout">
       <section className="sidebar">
@@ -94,11 +90,7 @@ export default function Application(props) {
             />
             <hr className="sidebar__separator sidebar--centered" />
             <nav className="sidebar__menu">
-              <DayList
-                days={days}
-                day={day}
-                setDay={setDay}
-              />
+              <DayList days={days} day={day} setDay={setDay} />
             </nav>
             <img
               className="sidebar__lhl sidebar--centered"
@@ -108,9 +100,7 @@ export default function Application(props) {
           </>
         }
       </section>
-      <section className="schedule">
-        {appointmentSchedules}
-      </section>
+      <section className="schedule">{appointmentSchedules}</section>
     </main>
   );
 }
