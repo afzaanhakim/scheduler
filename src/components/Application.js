@@ -4,7 +4,7 @@ import "components/Application.scss";
 import DayList from "components/DayList";
 import DayListItem from "components/DayListItem";
 import Appointment from "components/Appointment";
-import { getAppointmentsForDay } from "helpers/selectors";
+import { getAppointmentsForDay, getInterview } from "helpers/selectors";
 
 export default function Application(props) {
   const [state, setState] = useState({
@@ -13,6 +13,7 @@ export default function Application(props) {
     appointments: {},
   });
   const dailyAppointments = getAppointmentsForDay(state, state.day);
+
   const setDay = (day) => setState({ ...state, day });
 
   useEffect(() => {
@@ -34,12 +35,20 @@ export default function Application(props) {
       });
   }, []);
   const appointmentSchedules = dailyAppointments.map((appointment) => {
-    return <Appointment key={appointment.id} {...appointment} />;
+    const interview = getInterview(state, appointment.interview);
+    return (
+      <Appointment
+        key={appointment.id}
+        id={appointment.id}
+        time={appointment.time}
+        interview={appointment.interview}
+      />
+    );
   });
   return (
     <main className="layout">
       <section className="sidebar">
-        {
+        
           <>
             <img
               className="sidebar--centered"
@@ -56,7 +65,7 @@ export default function Application(props) {
               alt="Lighthouse Labs"
             />
           </>
-        }
+        
       </section>
       <section className="schedule">{appointmentSchedules}</section>
     </main>
