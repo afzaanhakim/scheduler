@@ -11,7 +11,7 @@ export default function useVisualMode(initial) {
       newHist.splice(-1, 1, nm);
       return newHist;
     } 
-      setHistory([...history, nm]);
+      setHistory([...newHist, nm]);
     
   }
 

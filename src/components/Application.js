@@ -43,7 +43,7 @@ return axios.put(`/api/appointments/${id}`, {interview})
     };
 
     return axios.delete(`/api/appointments/${id}`)
-    .then(setState(({...state, appointments})));
+    .then(() => setState(({...state, appointments})));
 
   }
   useEffect(() => {
