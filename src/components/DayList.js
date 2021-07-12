@@ -4,7 +4,6 @@ import DayListItem from "./DayListItem";
 export default function DayList(props) {
   const mapDay = props.days.map(day => {
     return (
-      <ul>
         <DayListItem
           key ={day.id}
           name={day.name}
@@ -12,7 +11,6 @@ export default function DayList(props) {
           selected={day.name === props.day}
           setDay={props.setDay}
         />
-      </ul>
     );
   });
 
