@@ -1,6 +1,6 @@
 import React from "react";
 
-import { render, cleanup, waitForElement, fireEvent, getByText, prettyDOM, getAllByTestId, getByAltText, getByPlaceholderText } from "@testing-library/react";
+import { render, cleanup, waitForElement, fireEvent, getByText, prettyDOM, getAllByTestId, getByAltText, getByPlaceholderText, queryByText } from "@testing-library/react";
 
 import Application from "components/Application";
 
@@ -35,8 +35,20 @@ fireEvent.change(getByPlaceholderText(appointment, /enter student name/i), {
 });
 fireEvent.click(getByAltText(appointment, "Sylvia Palmer"))
 fireEvent.click(getByText(appointment, "Save"))
+//Validate to verify that appoint element contains the text SAVING immediately after save is clicked
+expect(getByText(appointment, "SAVING")).toBeInTheDocument();
 await waitForElement(() => getByText(container, "SAVING"));
-console.log(prettyDOM(appointment));
+
+
+//confirm to show student name is shown after SAVING indicator is hidden
+await waitForElement(() => getByText(appointment, "Lydia Miller-Jones"));
+
+const day = getAllByTestId(container, "day").find(day =>
+  queryByText(day, "Monday")
+);
+
+
+
 });
 
 
