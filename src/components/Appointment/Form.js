@@ -35,6 +35,7 @@ function validate() {
         value ={name}
         onChange={(event)=>setName(event.target.value)}
         data-testid="student-name-input"
+        alt="Lydia Miller-Jones"
       />
     </form>
     <section className="appointment__validation">{error}</section>
