@@ -1,26 +1,18 @@
 import { useState } from "react";
 
 export default function useVisualMode(initial) {
-  const [mode, setMode] = useState(initial);
   const [history, setHistory] = useState([initial]);
 
   function transition(nm, replace = false) {
-    setMode(nm);
-    const newHist = [...history]
     if (replace) {
-      newHist.splice(-1, 1, nm);
-      return newHist;
-    } 
-      setHistory([...newHist, nm]);
-    
+      setHistory((history) => [nm, ...history.slice(1)]);
+    } else {
+      setHistory((history) => [nm, ...history]);
+    }
   }
 
   function back() {
-    if (history.length > 1) {
-      const newHist = [...history]
-      setMode(newHist[newHist.length - 2]);
-      setHistory(newHist.slice(0, -1));
-    }
+    setHistory((history) => (history.length > 1 ? history.slice(1) : history));
   }
-  return { mode, transition, back };
+  return { mode: history[0], transition, back };
 }
