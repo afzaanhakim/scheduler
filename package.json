@@ -47,7 +47,8 @@
     "watchPathIgnorePatterns": [
       "<rootDir>/node_modules/",
       "<rootDir>/.git/"
-    ]
-  },
+    ],
+    "resetMocks": false
+  }, 
   "proxy": "http://localhost:8001"
 }
