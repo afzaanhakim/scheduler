@@ -11,7 +11,7 @@ export function getAppointmentsForDay(state, day) {
   return apps;
 }
 
-//getting a specific interview object
+//getting a specific interview object with interview data
 
 export function getInterview(state, interview) {
   const int = {};
