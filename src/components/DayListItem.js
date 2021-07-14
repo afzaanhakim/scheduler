@@ -7,7 +7,7 @@ export default function DayListItem(props) {
     "day-list__item--selected": props.selected,
     "day-list__item--full": props.spots === 0,
   });
-
+//custom message based on number of spots
   const formatSpots = (props) => {
     let val = "";
     if (props.spots === 0) {

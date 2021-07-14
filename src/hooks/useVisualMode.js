@@ -3,7 +3,7 @@ import { useState } from "react";
 export default function useVisualMode(initial) {
   const [mode, setMode] = useState(initial);
   const [history, setHistory] = useState([initial]);
-
+//transitioning into a new mode and keeps track of previous mode
   function transition(nm, replace = false) {
     setMode(nm);
     const newHist = [...history];
@@ -13,7 +13,7 @@ export default function useVisualMode(initial) {
     }
     setHistory([...newHist, nm]);
   }
-
+//back function to revert if history array has more than 1 mode
   function back() {
     if (history.length > 1) {
       const newHist = [...history];

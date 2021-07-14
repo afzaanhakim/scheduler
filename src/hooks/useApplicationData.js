@@ -8,7 +8,7 @@ export default function useApplicationData() {
     days: [],
     appointments: {},
   });
-  //updating state based on day
+  
   const setDay = (day) => setState({ ...state, day });
 
   //function spotsupdater
@@ -32,7 +32,7 @@ export default function useApplicationData() {
     );
     return updatedState;
   }
-  //getting data from api to set state
+  //get requests to server
   useEffect(() => {
     Promise.all([
       axios.get(`/api/days`),

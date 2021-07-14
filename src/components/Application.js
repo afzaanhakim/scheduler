@@ -12,10 +12,13 @@ import useApplicationData from "hooks/useApplicationData";
 export default function Application(props) {
   const { state, setDay, bookInterview, cancelInterview } =
     useApplicationData();
-
+  //getting appointments for the day
   const dailyAppointments = getAppointmentsForDay(state, state.day);
+
+  //creates the schedules for the day with the appointment components
   const appointmentSchedules = dailyAppointments.map((appointment) => {
     const interview = getInterview(state, appointment.interview);
+    //interviewers for a selected day
     const interviewers = getInterviewersForDay(state, state.day);
     return (
       <Appointment
