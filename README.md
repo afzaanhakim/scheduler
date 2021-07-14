@@ -3,16 +3,16 @@ A Single Page React app that allows users to book and cancel interviews. User ca
 
 
 ## Screenshots
-!["Appointment-Form"] (https://github.com/afzaanhakim/scheduler/blob/master/docs/appointment-form.png?raw=true)
+!["Appointment Form"](https://github.com/afzaanhakim/scheduler/blob/master/docs/appointment-form.png?raw=true)
 
 
-!["Delete-Appointment-Confirmation"] (https://github.com/afzaanhakim/scheduler/blob/master/docs/delete-confirm.png?raw=true)
+!["Delete Appointment Confirmation"](https://github.com/afzaanhakim/scheduler/blob/master/docs/delete-confirm.png?raw=true)
 
 
-!["Appointments"] (https://github.com/afzaanhakim/scheduler/blob/master/docs/idlestate.png?raw=true)
+!["Appointments"](https://github.com/afzaanhakim/scheduler/blob/master/docs/idlestate.png?raw=true)
 
 
-!["Could-Not-Save-Error"] (https://github.com/afzaanhakim/scheduler/blob/master/docs/notsaveerror.png?raw=true)
+!["Could Not Save Appointment Error Element"](https://github.com/afzaanhakim/scheduler/blob/master/docs/notsaveerror.png?raw=true)
 
 
 ## Testing
